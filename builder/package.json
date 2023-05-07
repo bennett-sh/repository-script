@@ -1,5 +1,5 @@
 {
-  "name": "repo-script-builder",
+  "name": "repository-script-builder",
   "version": "1.0.0",
   "description": "A tool for making .repo-meta files",
   "main": "dist/main.js",

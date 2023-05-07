@@ -1,5 +1,5 @@
 {
-  "name": "repo-script",
+  "name": "repository-script",
   "version": "1.0.0",
   "description": "An easier way of writing repository files with code",
   "main": "dist/src/lib.js",
@@ -42,9 +42,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bennett-sh/repo-script.git"
+    "url": "https://github.com/bennett-sh/repository-script.git"
   },
-  "homepage": "https://github.com/bennett-sh/repo-script",
+  "homepage": "https://github.com/bennett-sh/repository-script",
   "bundles": {
     "index.d.ts": {
       "inputFiles": [

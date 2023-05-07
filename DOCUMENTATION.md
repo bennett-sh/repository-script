@@ -3,7 +3,7 @@
 ### A Simple Patch
 To create a simple repository patch, import the ```createRepo``` function, call the ```Repository::patch``` function with the patch object and then save it with ```Repository::save```.
 ```ts
-import { createRepo, RepositoryData } from 'repo-script'
+import { createRepo, RepositoryData } from 'repository-script'
 
 const repo = createRepo()
 
