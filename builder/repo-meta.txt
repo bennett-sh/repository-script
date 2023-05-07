@@ -1,0 +1,13 @@
+File Structure of a .repo-meta file (LE)
+ID_NAME_BLOCK_SIZE u32
+[
+  ID char[36]
+  NAME_SIZE u16
+  NAME char[NAME_SIZE]
+][ID_NAME_BLOCK_SIZE]
+ID_CATEGORY_BLOCK_SIZE u32
+[
+  ID char[36]
+  CATEGORY_SIZE u16
+  CATEGORY char[CATEGORY_SIZE]
+][ID_CATEGORY_BLOCK_SIZE]

@@ -1,0 +1,19 @@
+{
+  "name": "repo-script-builder",
+  "version": "1.0.0",
+  "description": "A tool for making .repo-meta files",
+  "main": "dist/main.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build:watch": "tsc -w",
+    "build": "tsc",
+    "start:watch": "nodemon .",
+    "start": "node .",
+    "generateCode": "node ./dist/generateCode.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
