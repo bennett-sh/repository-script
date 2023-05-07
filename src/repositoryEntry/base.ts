@@ -1,4 +1,4 @@
-import type { IRepositoryEntry, TUUIDv4 } from '../types.js'
+import type { IRepositoryItem, TUUIDv4 } from '../types.js'
 import { Repository } from '../repository.js'
 
 export class RepositoryEntry {
@@ -11,7 +11,7 @@ export class RepositoryEntry {
     return this._id
   }
 
-  public patch(entries: Partial<IRepositoryEntry>): this {
+  public patch(entries: Partial<IRepositoryItem>): this {
     this.repo.patch(this.id, entries)
     return this
   }

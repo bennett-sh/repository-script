@@ -1,13 +1,12 @@
-import type { IRepository, IRepositoryEntry, TUUIDv4 } from './types.js'
+import type { IRepository, IRepositoryItem, TUUIDv4 } from './types.js'
 import { deepEnsureID, randomRepositoryID } from './utils/id.js'
 import { RepositoryEntry } from './repositoryEntry/_index.js'
 import { writeFile } from 'fs/promises'
-import { unescape } from 'querystring'
 
 export class Repository {
-  private data = new Map<TUUIDv4, IRepositoryEntry>()
+  private data = new Map<TUUIDv4, IRepositoryItem>()
 
-  public addItem(entries: Partial<IRepositoryEntry>): RepositoryEntry {
+  public addItem(entries: Partial<IRepositoryItem>): RepositoryEntry {
     let id = entries.ID_
     if(!id) id = randomRepositoryID()
     this.patch(id, { ID_: id })
@@ -18,7 +17,7 @@ export class Repository {
     return new RepositoryEntry(this, id)
   }
 
-  public patch(id: TUUIDv4, entries: Partial<IRepositoryEntry>): this {
+  public patch(id: TUUIDv4, entries: Partial<IRepositoryItem>): this {
     this.data[id] = {
       ...this.data[id],
       ...entries
@@ -27,7 +26,7 @@ export class Repository {
   }
 
   public patchAll(ids: TUUIDv4[], handler: (entry: RepositoryEntry) => void): this
-  public patchAll(ids: TUUIDv4[], handler: Partial<IRepositoryEntry>): this
+  public patchAll(ids: TUUIDv4[], handler: Partial<IRepositoryItem>): this
   public patchAll(ids, handler): this {
     ids.forEach(id => {
       const entry = this.getItem(id)
@@ -42,7 +41,7 @@ export class Repository {
     return this
   }
 
-  public async patchAllAsync(ids: TUUIDv4[], handler: (entry: RepositoryEntry) => Promise<Partial<IRepositoryEntry>>): Promise<void> {
+  public async patchAllAsync(ids: TUUIDv4[], handler: (entry: RepositoryEntry) => Promise<Partial<IRepositoryItem>>): Promise<void> {
     for(const id of ids) {
       const entry = this.getItem(id)
       entry.patch(await handler(entry))
