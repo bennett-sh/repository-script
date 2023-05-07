@@ -1,14 +1,12 @@
 {
   "name": "repository-script",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An easier way of writing repository files with code",
   "main": "dist/src/lib.js",
   "types": "./dist/src/index.d.ts",
   "type": "module",
   "scripts": {
-    "install": "cd builder && pnpm install && cd ..",
-    "prebuild": "cd builder && pnpm run build && pnpm run generateCode && cd ..",
-    "build": "pnpm run prebuild && tsc && pnpm run build:types",
+    "build": "tsc && pnpm run build:types",
     "build:watch": "tsc -w",
     "build:types": "dts-bundle-generator --export-referenced-types false -o dist/src/index.d.ts src/lib.ts",
     "test": "mocha",

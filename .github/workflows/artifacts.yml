@@ -33,6 +33,17 @@ jobs:
         run: |
           pnpm install
 
+      - name: Setup Repo Builder
+        run: |
+          cd builder
+          pnpm install
+          pnpm run build
+
+      - name: Generate Repo Data
+        run: |
+          pnpm run generateCode
+          cd ..
+
       - name: Build
         run: |
           pnpm run build
