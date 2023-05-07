@@ -1,4 +1,4 @@
-File Structure of a .repo-meta file (LE)
+File structure of a .repo-meta file (LE)
 ID_NAME_BLOCK_SIZE u32
 [
   ID char[36]
