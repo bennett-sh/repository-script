@@ -38,7 +38,10 @@
     "uuid": "^9.0.0"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "DOCUMENTATION.md",
+    "LICENSE",
+    "README.md"
   ],
   "repository": {
     "type": "git",
