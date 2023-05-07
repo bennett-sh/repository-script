@@ -1,10 +1,10 @@
 
-import { createRepo, RepositoryData, RepositoryGroup } from '../src/lib.js'
+import { createRepository, RepositoryData, RepositoryGroup } from '../src/lib.js'
 import { Float, Raw } from '../src/lib.js'
 
 async function main() {
   // create a new repository
-  const repo = createRepo()
+  const repo = createRepository()
 
   // add a new entry with a random repository id
   const entry = repo.addItem({

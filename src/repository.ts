@@ -69,6 +69,6 @@ export class Repository {
   }
 }
 
-export function createRepo() {
+export function createRepository() {
   return new Repository()
 }
