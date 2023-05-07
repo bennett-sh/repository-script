@@ -39,8 +39,10 @@ jobs:
 
       - name: Ready library for upload
         run: |
-          find dist -name '*.d.ts' ! -name 'index.d.ts' -delete
-          cp -r package.json pnpm-lock.yaml tsconfig.json dist/ DOCUMENTATION.md LICENSE
+          rm -rf output
+          mkdir output
+          cp -r package.json pnpm-lock.yaml tsconfig.json dist/ DOCUMENTATION.md LICENSE output/
+          find output -name '*.d.ts' ! -name 'index.d.ts' -delete
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
