@@ -23,6 +23,7 @@ function tsIfyName(name: string) {
     .trim()
     .replace(/\//g, '_')
     .replace(/\s/g, '_')
+    .replace(/\-/g, '_')
     .replace(/(\(|\)|\'|\"|\\)/g, '')
     // merge 2+ sequential underscores
     .replace(/\_(\_)*/g, '_')
