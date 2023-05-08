@@ -1,6 +1,6 @@
 import { IRepositoryConfiguration } from '../types'
 
-export function patchConfigurations(entries: Partial<IRepositoryConfiguration>) {
+export function weaponConfigurations(entries: Partial<IRepositoryConfiguration>) {
   return {
     ActorConfiguration: entries,
     PrimaryConfiguration: entries,
