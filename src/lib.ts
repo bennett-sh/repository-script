@@ -1,6 +1,8 @@
 
 export * from './_REPOSITORY_DATA.generated.js'
 export * from './repositoryEntry/_index.js'
+export * from './utils/configurations.js'
+export * from './utils/other.js'
 export * from './repository.js'
 export type * from './types.js'
 export * from './utils/hash.js'

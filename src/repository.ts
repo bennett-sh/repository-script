@@ -2,6 +2,7 @@ import type { IRepository, IRepositoryItem, TUUIDv4 } from './types.js'
 import { deepEnsureID, randomRepositoryID } from './utils/id.js'
 import { RepositoryEntry } from './repositoryEntry/_index.js'
 import { writeFile } from 'fs/promises'
+import { deepAssign } from './lib.js'
 
 export class Repository {
   private data: IRepository = {}
@@ -19,10 +20,7 @@ export class Repository {
 
   public patch(id: TUUIDv4 | RepositoryEntry, entries: Partial<IRepositoryItem>): this {
     if(id instanceof RepositoryEntry) id = id.id
-    this.data[id] = {
-      ...this.data[id],
-      ...entries
-    }
+    this.data[id] = deepAssign(this.data[id], entries)
     return this
   }
 
