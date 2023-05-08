@@ -21,9 +21,11 @@ function tsIfyName(name: string) {
   return name
     .replace(/^\(.*\)/g, '')
     .trim()
-    .replace(/\//g, '-')
+    .replace(/\//g, '_')
     .replace(/\s/g, '_')
     .replace(/(\(|\)|\'|\"|\\)/g, '')
+    // merge 2+ sequential underscores
+    .replace(/\_(\_)*/g, '_')
     // last steps
     .replace(/^./g, (match) => match.toUpperCase())
     .replace(/[_-](.)/g, (match, p1) => match.charAt(0) + p1.toUpperCase())
