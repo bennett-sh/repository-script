@@ -173,11 +173,11 @@ export interface IRepositoryItemBase {
   ModelMuzzleExtensionSelection: number | Float;
   ModelMuzzleExtensionSkinSelection: number | Float;
   ModelSkinSelections: (number | Float)[];
-  ActorConfiguration?: IRepositoryConfiguration;
+  ActorConfiguration: Partial<IRepositoryConfiguration>;
   AudioFireType: string | RepositoryEntry;
   AudioWeaponClass: string | RepositoryEntry;
-  PrimaryConfiguration?: IRepositoryConfiguration;
-  SecondaryConfiguration?: IRepositoryConfiguration;
+  PrimaryConfiguration: Partial<IRepositoryConfiguration>;
+  SecondaryConfiguration: Partial<IRepositoryConfiguration>;
   AudioExoticType: string | RepositoryEntry;
   AudioImpactType: string | RepositoryEntry;
   AudioLowPassFilter: number | Float;

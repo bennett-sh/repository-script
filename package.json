@@ -1,6 +1,6 @@
 {
   "name": "repository-script",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "An easier way of writing repository files with code",
   "main": "dist/src/lib.js",
   "types": "./dist/src/index.d.ts",
