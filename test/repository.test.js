@@ -1,9 +1,9 @@
-import { RepositoryData, createRepo } from '../dist/src/lib.js'
+import { RepositoryData, createRepository } from '../dist/src/lib.js'
 import { readFile, rm } from 'fs/promises'
 import assert from 'assert'
 
 describe('Simple Repository', () => {
-  const repo = createRepo()
+  const repo = createRepository()
 
   const blackLily = repo.getItem(RepositoryData.ICA_19_Black_Lilly)
 
@@ -21,12 +21,28 @@ describe('Simple Repository', () => {
     })
 
     assert.deepStrictEqual(
-      repo.build(),
+      repo.build()?.['f93b99a3-aef6-419f-b303-59470577696d'],
       {
-        'f93b99a3-aef6-419f-b303-59470577696d': {
-          SomeProp: true,
-          AnotherProp: 2
-        }
+        SomeProp: true,
+        AnotherProp: 2
+      }
+    )
+  })
+
+  it('should add items', () => {
+    const testItem = repo.addItem({
+      SomeProp: true,
+      AnotherProp: 2,
+      AnArray: ['a', 'basd']
+    })
+
+    assert.deepStrictEqual(
+      repo.build()[testItem.id],
+      {
+        SomeProp: true,
+        AnotherProp: 2,
+        AnArray: ['a', 'basd'],
+        ID_: testItem.id
       }
     )
   })

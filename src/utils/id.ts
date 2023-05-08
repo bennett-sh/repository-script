@@ -11,6 +11,7 @@ export function deepEnsureID<T>(obj: T): T {
   const result: { [key: string]: any } = {}
   if(obj instanceof RepositoryEntry) return obj.id as T
   if(obj instanceof String) return obj
+  if(obj?.[Symbol.iterator]) return obj
   for(const key of Object.keys(obj ?? {})) {
     if(obj.hasOwnProperty(key)) {
       const value = obj[key]
@@ -25,7 +26,7 @@ export function deepEnsureID<T>(obj: T): T {
       result[key] = deepEnsureID(value)
     }
   }
-  return result as T
+  return {...result as T}
 }
 
 export function randomRepositoryID(): TUUIDv4 {
