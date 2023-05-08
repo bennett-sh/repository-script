@@ -9,7 +9,7 @@ export class Repository {
   public addItem(entries: Partial<IRepositoryItem>): RepositoryEntry {
     let id = entries.ID_
     if(!id) id = randomRepositoryID()
-    this.patch(id, { ID_: id })
+    this.patch(id, { ...entries, ID_: id })
     return new RepositoryEntry(this, id)
   }
 
