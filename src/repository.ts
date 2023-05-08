@@ -20,7 +20,7 @@ export class Repository {
 
   public patch(id: TUUIDv4 | RepositoryEntry, entries: Partial<IRepositoryItem>): this {
     if(id instanceof RepositoryEntry) id = id.id
-    this.data[id] = deepAssign(this.data[id], entries)
+    this.data[id] = deepAssign(this.data[id] ?? {}, entries)
     return this
   }
 
