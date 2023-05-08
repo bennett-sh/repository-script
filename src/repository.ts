@@ -26,16 +26,14 @@ export class Repository {
     return this
   }
 
-  public patchAll(ids: TUUIDv4[], handler: (entry: RepositoryEntry) => void): this
-  public patchAll(ids: TUUIDv4[], handler: Partial<IRepositoryItem>): this
-  public patchAll(ids, handler): this {
+  public patchAll(ids: TUUIDv4[], data: Partial<IRepositoryItem>): this {
+    ids.forEach(id => this.patch(id, data))
+    return this
+  }
+
+  public patchAllFn(ids: TUUIDv4[], handler: (entry: RepositoryEntry) => Partial<IRepositoryItem>): this {
     ids.forEach(id => {
       const entry = this.getItem(id)
-
-      if(!(handler instanceof Function)) {
-        entry.patch(handler)
-        return
-      }
 
       entry.patch(handler(entry))
     })

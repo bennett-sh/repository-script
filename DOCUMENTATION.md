@@ -35,12 +35,12 @@ repo
 ```
 
 ### Mass Patches
-One of the largest advantages of Repository Script is the ability to mass patch items. To do so, use the functions ```Repository::patchAll``` and/or ```Repository::patchAllAsync```.
+One of the largest advantages of Repository Script is the ability to mass patch items. To do so, use the functions ```Repository::patchAll```, ```Repository::patchAllFn``` and ```Repository::patchAllAsync```.
 ```ts
 repo.patchAll(RepositoryGroups.Pistols, {
   TestProp: 'asd'
 })
-repo.patchAll(RepositoryGroups.Explosives, item => ({
+repo.patchAllFn(RepositoryGroups.Explosives, item => ({
   TestProp: item.id
 }))
 await repo.patchAllAsync(RepositoryGroups.Tools, async (item) => ({
