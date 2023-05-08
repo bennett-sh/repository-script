@@ -17,7 +17,8 @@ export class Repository {
     return new RepositoryEntry(this, id)
   }
 
-  public patch(id: TUUIDv4, entries: Partial<IRepositoryItem>): this {
+  public patch(id: TUUIDv4 | RepositoryEntry, entries: Partial<IRepositoryItem>): this {
+    if(id instanceof RepositoryEntry) id = id.id
     this.data[id] = {
       ...this.data[id],
       ...entries

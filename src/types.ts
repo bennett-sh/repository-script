@@ -12,7 +12,7 @@ export type TIOIHash = `00${THexCharacter[14]}`
 export type TUUIDv4 = `${THexCharacter[8]}-${THexCharacter[4]}-${THexCharacter[4]}-${THexCharacter[4]}-${THexCharacter[12]}` | string
 
 export interface IRepositoryItemBase {
-  ID_: string | RepositoryEntry;
+  ID_: string;
   Image: string | RepositoryEntry;
   Name: string | RepositoryEntry;
   Outfit: string | RepositoryEntry;
