@@ -50,7 +50,7 @@ export class Repository {
   }
 
   public build(): IRepository {
-    return deepEnsureID(this.data)
+    return {...deepEnsureID(this.data)}
   }
 
   public asRepositoryJSON(spaces: number = 2): string {

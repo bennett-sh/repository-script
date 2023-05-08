@@ -26,7 +26,7 @@ export function deepEnsureID<T>(obj: T): T {
       result[key] = deepEnsureID(value)
     }
   }
-  return {...result as T}
+  return result as T
 }
 
 export function randomRepositoryID(): TUUIDv4 {
