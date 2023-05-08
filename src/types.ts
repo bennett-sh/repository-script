@@ -558,4 +558,4 @@ export interface IRepositoryConfiguration {
 }
 
 export type IRepositoryItem = Partial<IRepositoryItemBase> & Record<string, string | number | boolean | Raw | Float | any[] | {[key: string]: any}>
-export type IRepository = Map<TUUIDv4, IRepositoryItem>
+export type IRepository = {[key: string]: IRepositoryItem}

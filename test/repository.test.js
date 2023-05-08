@@ -47,6 +47,20 @@ describe('Simple Repository', () => {
     )
   })
 
+  it('should ref items', () => {
+    const testItem = repo.addItem({
+      SomeRef: blackLily
+    })
+
+    assert.deepStrictEqual(
+      repo.build()[testItem.id],
+      {
+        SomeRef: blackLily.id,
+        ID_: testItem.id
+      }
+    )
+  })
+
   it('should save', async () => {
     await repo.save('./_test.entity.patch.json', { spaces: 0, includeSchema: false })
 

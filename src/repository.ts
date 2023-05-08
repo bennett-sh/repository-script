@@ -4,7 +4,7 @@ import { RepositoryEntry } from './repositoryEntry/_index.js'
 import { writeFile } from 'fs/promises'
 
 export class Repository {
-  private data = new Map<TUUIDv4, IRepositoryItem>()
+  private data: IRepository = {}
 
   public addItem(entries: Partial<IRepositoryItem>): RepositoryEntry {
     let id = entries.ID_
@@ -50,7 +50,7 @@ export class Repository {
   }
 
   public build(): IRepository {
-    return {...deepEnsureID(this.data)}
+    return deepEnsureID(this.data)
   }
 
   public asRepositoryJSON(spaces: number = 2): string {
