@@ -41,8 +41,8 @@ jobs:
 
       - name: Generate Repo Data
         run: |
+          cd builder
           pnpm run generateCode
-          cd ..
 
       - name: Build
         run: |
