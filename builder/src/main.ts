@@ -45,7 +45,7 @@ async function loadRepo() {
 
       if(repo.some(entry => entry.ID_ === id)) {
         repo = repo.map(entry => entry.ID_ === id ? { ...entry, ...override } : entry)
-        return
+        continue
       }
       repo.push(override)
     }
