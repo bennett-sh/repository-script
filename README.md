@@ -1,6 +1,6 @@
 # Repository Script
 [![Tests](https://github.com/bennett-sh/repository-script/actions/workflows/tests.yml/badge.svg?event=push)](https://github.com/bennett-sh/repository-script/actions/workflows/tests.yml)
-[![Tests](https://github.com/bennett-sh/repository-script/actions/workflows/artifacts.yml/badge.svg?event=push)](https://github.com/bennett-sh/repository-script/actions/workflows/artifacts.yml)
+[![Artifacts](https://github.com/bennett-sh/repository-script/actions/workflows/artifacts.yml/badge.svg?event=push)](https://github.com/bennett-sh/repository-script/actions/workflows/artifacts.yml)
 #### A TS library for easy synthesis of repository files
 
 ## What can I use this for? / What advantages does it have over plain Repo?
