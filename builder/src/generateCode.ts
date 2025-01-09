@@ -87,6 +87,8 @@ async function main() {
 
     if(!category.endsWith('s')) category += 's'
 
+    if(category === 'Miscs') category = 'Misc'
+
     if(idCategoryMap[category]?.length > 0) {
       idCategoryMap[category].push(id)
     } else {

@@ -13,6 +13,7 @@
     "generateCode": "node ./dist/generateCode.js"
   },
   "devDependencies": {
+    "@types/node": "^22.10.5",
     "nodemon": "^2.0.22",
     "typescript": "^5.0.4"
   }

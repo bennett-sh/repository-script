@@ -8,4 +8,6 @@ cd repos
 rpkg-cli -filter 00204D1AFD76AB13 -extract_from_rpkg "%HITMAN3_RUNTIME%\chunk0.rpkg"
 rpkg-cli -filter 00204D1AFD76AB13 -extract_from_rpkg "%HITMAN3_RUNTIME%\chunk0patch1.rpkg"
 rpkg-cli -filter 00204D1AFD76AB13 -extract_from_rpkg "%HITMAN3_RUNTIME%\chunk0patch2.rpkg"
+rpkg-cli -filter 00204D1AFD76AB13 -extract_from_rpkg "%HITMAN3_RUNTIME%\chunk0patch3.rpkg"
+rpkg-cli -filter 00204D1AFD76AB13 -extract_from_rpkg "%HITMAN3_RUNTIME%\chunk0patch4.rpkg"
 cd ..\..

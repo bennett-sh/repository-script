@@ -62,7 +62,10 @@ async function main() {
     .map(([id, title]) => [id, tsIfyName(title)])
 
   const idCategoryMap = repo
-    .map(({ InventoryCategoryName, ID_ }) => [ID_, InventoryCategoryName])
+    .map(({ InventoryCategoryIcon, ID_ }) => {
+      if(InventoryCategoryIcon === 'INVALID_CATEGORY_ICON') InventoryCategoryIcon = 'Misc'
+      return [ID_, InventoryCategoryIcon]
+    })
     .filter(entry => entry.length == 2 && entry[1]?.length && entry[1].length > 0)
     .map(([id, cat]) => [id, tsIfyName(cat)])
 
