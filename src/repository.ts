@@ -57,7 +57,7 @@ export class Repository {
         default: return v
       }
     }, spaces)
-      .replace(/\"REPOSCRIPT_FLOAT_VALUE_(\d+)_\"/g, (_, p) => p.includes('.') ? p : `${p}.0`)
+      .replace(/\"REPOSCRIPT_FLOAT_VALUE_([\d.]+)_\"/g, (_, p) => p.includes('.') ? p : `${p}.0`)
       .replace(/\"REPOSCRIPT_RAW_VALUE_(.*)_\"/g, (_, p) => Buffer.from(p, 'base64').toString('utf-8'))
   }
 
